@@ -56,12 +56,12 @@ namespace CustomServerCore.Configuration
                     SaveConfig(pluginName, config);
                 }
 
-                Debug.Log($"[Medusa.Config] Конфигурация для плагина '{pluginName}' успешно загружена.");
+                Debug.Log($"[Medusa.Config] Configuration for plugin '{pluginName}' successfully loaded.");
                 return config;
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Medusa.Config] Ошибка загрузки конфига для '{pluginName}': {ex.Message}");
+                Debug.LogError($"[Medusa.Config] Failed to load configuration for '{pluginName}': {ex.Message}");
                 return new T();
             }
         }
@@ -82,7 +82,7 @@ namespace CustomServerCore.Configuration
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Medusa.Config] Ошибка сохранения конфига для '{pluginName}': {ex.Message}");
+                Debug.LogError($"[Medusa.Config] Failed to save configuration for '{pluginName}': {ex.Message}");
             }
         }
     }

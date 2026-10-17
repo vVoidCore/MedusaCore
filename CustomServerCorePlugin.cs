@@ -26,12 +26,12 @@ public class CustomServerCorePlugin : BaseUnityPlugin
         PlayerListener.Initialize();
         CustomServerCore.PluginManager.Initialize();
 
-        Logger.LogInfo("[Medusa] Ядро успешно инициализировано!");
+        Logger.LogInfo("[Medusa] Core successfully initialized!");
     }
 
     private void OnDestroy()
     {
         CustomServerCore.PluginManager.UnloadPlugins();
-        Logger.LogInfo("[Medusa] Ядро выгружено.");
+        Logger.LogInfo("[Medusa] Core unloaded.");
     }
 }

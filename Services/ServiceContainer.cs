@@ -13,13 +13,13 @@ namespace CustomServerCore.Services
             Type type = typeof(T);
             if (Services.ContainsKey(type))
             {
-                Debug.LogWarning($"[Medusa.Services] Сервис {type.Name} уже зарегистрирован. Перезапись...");
+                Debug.LogWarning($"[Medusa.Services] Service {type.Name} is already registered. Overwriting...");
                 Services[type] = service;
             }
             else
             {
                 Services.Add(type, service);
-                Debug.Log($"[Medusa.Services] Сервис {type.Name} успешно зарегистрирован.");
+                Debug.Log($"[Medusa.Services] Service {type.Name} successfully registered.");
             }
         }
 
@@ -29,7 +29,7 @@ namespace CustomServerCore.Services
             if (Services.ContainsKey(type))
             {
                 Services.Remove(type);
-                Debug.Log($"[Medusa.Services] Сервис {type.Name} удален из реестра.");
+                Debug.Log($"[Medusa.Services] Service {type.Name} removed from registry.");
             }
         }
 
@@ -41,7 +41,7 @@ namespace CustomServerCore.Services
                 return service as T;
             }
 
-            Debug.LogWarning($"[Medusa.Services] Запрашиваемый сервис {type.Name} не найден в реестре!");
+            Debug.LogWarning($"[Medusa.Services] Requested service {type.Name} was not found in the registry!");
             return null;
         }
     }

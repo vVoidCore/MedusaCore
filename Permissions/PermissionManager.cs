@@ -42,11 +42,11 @@ namespace CustomServerCore.Permissions
                 {
                     CreateDefaultDatabase();
                 }
-                Debug.Log("[Medusa.Permissions] Система прав успешно загружена.");
+                Debug.Log("[Medusa.Permissions] Permission system successfully loaded.");
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Medusa.Permissions] Ошибка загрузки базы прав: {ex.Message}");
+                Debug.LogError($"[Medusa.Permissions] Failed to load permissions database: {ex.Message}");
                 CreateDefaultDatabase();
             }
         }
@@ -88,7 +88,7 @@ namespace CustomServerCore.Permissions
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Medusa.Permissions] Ошибка сохранения базы прав: {ex.Message}");
+                Debug.LogError($"[Medusa.Permissions] Failed to save permissions database: {ex.Message}");
             }
         }
 

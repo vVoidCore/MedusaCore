@@ -10,7 +10,7 @@ namespace CustomServerCore
         public static void Initialize()
         {
             Provider.onServerConnected += OnPlayerConnected;
-            Debug.Log("[CustomServerCore] Система отслеживания игроков успешно активирована!");
+            Debug.Log("[CustomServerCore] Player tracking system successfully activated!");
         }
 
         private static void OnPlayerConnected(CSteamID steamID)
@@ -23,7 +23,7 @@ namespace CustomServerCore
                     string playerName = client.playerID.playerName;
                     string characterName = client.playerID.characterName;
 
-                    Debug.Log($"[CustomServerCore] Игрок {playerName} (Персонаж: {characterName}, SteamID: {steamID}) успешно зашел на сервер!");
+                    Debug.Log($"[CustomServerCore] Player {playerName} (Character: {characterName}, SteamID: {steamID}) successfully connected to the server!");
                 }
             });
         }

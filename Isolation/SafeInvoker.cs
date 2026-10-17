@@ -13,7 +13,7 @@ namespace CustomServerCore.Isolation
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Medusa.Isolation] КРИТИЧЕСКАЯ ОШИБКА в плагине '{pluginName}' во время выполнения '{actionName}': {ex.Message}");
+                Debug.LogError($"[Medusa.Isolation] CRITICAL ERROR in plugin '{pluginName}' during execution of '{actionName}': {ex.Message}");
                 Debug.LogException(ex);
             }
         }
@@ -29,7 +29,7 @@ namespace CustomServerCore.Isolation
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Medusa.Isolation] КРИТИЧЕСКАЯ ОШИБКА в плагине '{pluginName}' во время выполнения '{actionName}': {ex.Message}");
+                Debug.LogError($"[Medusa.Isolation] CRITICAL ERROR in plugin '{pluginName}' during execution of '{actionName}': {ex.Message}");
                 Debug.LogException(ex);
             }
             return defaultValue;
