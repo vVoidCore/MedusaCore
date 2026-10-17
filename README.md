@@ -1,31 +1,30 @@
 # Medusa Core 🛡️
-Современное, легкое, модульное и безопасное серверное ядро для **Unturned** (на базе BepInEx и .NET Framework 4.8), созданное как быстрая и чистая альтернатива устаревшему RocketMod.
 
-## ✨ Особенности
-- **Модульная архитектура** — изоляция плагинов и удобное межплагинное взаимодействие через `ServiceLocator`.
-- **Безопасность (`SafeInvoker`)** — защита сервера от падений и критических ошибок при сбоях в плагинах.
-- **Система прав и групп** — встроенная иерархическая система (`permissions.json`) с поддержкой префиксов и масок (`*`).
-- **Управление конфигурациями** — автоматическая сериализация и сохранение настроек плагинов.
-- **Горячая перезагрузка (Soft Hot-Reload)** — возможность обновлять плагины на лету с помощью логической выгрузки и повторного чтения сборок.
-- **Чистота кода** — проект полностью избавлен от лишних зависимостей и зашумляющих комментариев.
+A modern, lightweight, modular, and secure server core for Unturned (powered by BepInEx and .NET Framework 4.8), built as a fast and clean alternative to legacy frameworks.
 
----
+## ✨ Features
 
-## 🚀 Установка
-1. Установите [BepInEx 5.x](https://github.com/BepInEx/BepInEx) для выделенного сервера Unturned.
-2. Поместите `CustomServerCore.dll` в директорию `BepInEx/plugins/`.
-3. Запустите сервер для генерации базовой структуры конфигураций.
+- **Modular Architecture** — Plugin isolation and seamless inter-plugin communication via `ServiceLocator`.
+- **Safety (`SafeInvoker`)** — Protects the server from crashes and critical errors if a plugin fails.
+- **Permissions & Groups** — Built-in hierarchical permission system (`permissions.json`) supporting prefixes and wildcards (`*`).
+- **Configuration Management** — Automatic serialization and saving of plugin settings.
+- **Soft Hot-Reload** — Ability to update plugins on the fly through logical unloading and reloading of assemblies.
+- **Clean Codebase** — Zero bloat, no unnecessary dependencies, and fully structured source code.
 
----
+## 🚀 Installation
 
-## 📂 Структура директорий
-- Конфигурации ядра и плагинов: `BepInEx/config/MedusaCore/`
-- Сторонние плагины: `BepInEx/plugins/CustomCorePlugins/`
+1. Install BepInEx 5.x for your Unturned dedicated server.
+2. Place `CustomServerCore.dll` into the `BepInEx/plugins/` directory.
+3. Start the server to generate the default configuration structure.
 
----
+## 📂 Directory Structure
 
-## 🛠️ Создание плагина
-Кастомный плагин должен реализовывать интерфейс `ICustomPlugin`:
+- Core and plugin configurations: `BepInEx/config/MedusaCore/`
+- Custom plugins directory: `BepInEx/plugins/CustomCorePlugins/`
+
+## 🛠️ Creating a Plugin
+
+A custom plugin must implement the `ICustomPlugin` interface:
 
 ```csharp
 using CustomServerCore;
@@ -38,11 +37,11 @@ public class MyAwesomePlugin : ICustomPlugin
 
     public void Load()
     {
-        Debug.Log("Плагин запущен!");
+        Debug.Log("Plugin loaded!");
     }
 
     public void Unload()
     {
-        Debug.Log("Плагин выгружен!");
+        Debug.Log("Plugin unloaded!");
     }
 }
